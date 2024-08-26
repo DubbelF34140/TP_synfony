@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #a3a68e !important;">
+    <div class="container-fluid">
+        <!-- Logo et Nom -->
+        <div class="navbar-brand d-flex align-items-center">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVR4nO2Zz0sVURTHP1mJgSC0LUwSEmphq5YRLhKSDKp1uzYJSQUp9A+4SUjIqKCgRfuMxNSKelS0aVWLhIx+IASBC1NJzIkL32Aa3suZ+2PmWfOBC48393zPuXfu3LnnDJSUlJRsdJ4DUZ23SpqBRBukrUvqjgUR/bcDiRzX7S5gGlgAJoCdVXxVQi6tiqXws4TOdOL6REBfNWmVwRz2LCScz+PGnHRMbKlpAJaBNaDZ0vFUlZl8AHRYaDUrlmXFlom3ct6JHeYZmQQWgRe6I0ZvBbgMtGTQ6pStiSkzYzI+jh+2A1eAVel+A/qBzSlsT8rmno3jYRlfxC/7gaex5fYaOLiOzaD6mjuZmT4ZXycMR4HZ2IDuA201+t5UnzM2jrpl/IhwbAMGYjvcEjBUZYN5ouuHbZy0y/gj4dkB3NHOZHx+AU4Bm3T9s/7fbSNuHsIfwE/NXB4cAF7Gltsr4JBiMLvdFlvhdxLcS340AKeBr4l30IyL6LhEesmfFu1SK4rhO3AO2GojNiKR8xTHpcSdMYlfZs7KeJTiuKYY7gJv9A7KTI9EHlIcU4rhiItIh0TeUxwfFMMeF5FGnY1W9TtvGn36n/UxI/WwIiZ9rFFLenw+o6MSMztY3vTL91UfYhckZnKJvBnx+R47FktT82bc58lin8TMuStvZnye9Zp8nD7r5fT9ySUfsKQ9RD702CVDs6Q7RIZ6wyVntqQvRM1gwKWKYclwiCrOCZe6kiVjnutqf1T60lThXSrsUZVmW+n8a+01TWXc50DWHGrPfqvhlrR6+BpQk98z3UV4urJ+B8nCbc9rP027FWIgvfpEkNcgFgsqQ5WU/JP8AsECtdozW3v0AAAAAElFTkSuQmCC" alt="Logo" class="me-2" style="width: 40px; height: 40px;">
+            <a class="navbar-brand" href="{{ path('app_main') }}" style="font-size: x-large;">Bucket-List</a>
+        </div>
+
+        <!-- Toggle pour mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Liens de navigation -->
+        <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Home</a>
+                </li>
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_about_us') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_wish_create') }}">New Wish</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_wish_list') }}">Wish List</a>
+                    </li>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_category_list') }}">Category List</a>
+                        </li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <!-- Connexion/Utilisateur -->
+        <div class="d-flex align-items-center ms-auto">
+            {% if app.user %}
+                <span class="me-2">{{ app.user.email }}</span>
+                <a class="btn btn-sm btn-secondary ms-2" href="{{ path('app_logout') }}">Logout</a>
+            {% else %}
+                <a class="btn btn-sm btn-secondary" href="{{ path('app_login') }}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-3">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

@@ -1,0 +1,19 @@
+body {
+    background-color: #fff1e7;
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    margin: 0;
+}
+h1 {
+    margin: 0;
+}
+navbar {
+    background-color: #a3a68e !important;
+}
+
+footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+}

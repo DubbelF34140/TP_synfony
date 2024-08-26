@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wish{% endblock %}
+
+{% block body %}
+    <div class="container mt-4" style="margin-bottom: 100px">
+        <h1 class="mb-4 text-center">Edit Wish</h1>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                {{ form_start(wishForm) }}
+                {{ form_errors(wishForm.image) }}
+
+                {% if wish.brochureFilename %}
+                        <div class="mb-3 text-center">
+                            <img src="{{ asset('uploads/images/wish/' ~ wish.brochureFilename) }}" class="img-fluid rounded mb-2" alt="Wish Image">
+                            <div class="form-check">
+                                {{ form_row(wishForm.removeImage) }}
+                            </div>
+                        </div>
+                {% endif %}
+
+                <div class="mb-3">
+                    {{ form_row(wishForm.title) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(wishForm.author) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(wishForm.description) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(wishForm.image) }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Wish</button>
+
+                {{ form_end(wishForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

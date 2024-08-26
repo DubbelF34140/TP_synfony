@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wish Detail{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Wish Details</h1>
+        <div class="card shadow-sm" style="margin-bottom: 100px">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">{{ wish.title }}</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="card-text">
+                            <strong>Author:</strong> {{ wish.author }}<br>
+                            <strong>Date Created:</strong> {{ wish.dateCreated | date('d-m-Y H:i') }}<br>
+                            <strong>Description:</strong> {{ wish.description }}<br>
+                            <strong>Published:</strong> <span class="badge {{ wish.isPublished ? 'bg-success' : 'bg-danger' }}">{{ wish.isPublished ? 'Yes' : 'No' }}</span><br>
+                            <strong>Categorie: </strong>  {{ wish.category.name }}
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        {% if wish.imageFilename() %}
+                            <img style="width: 300px; height: 200px;" src="{{ asset('/uploads/images/wish/' ~ wish.imageFilename()) }}" alt="{{ wish.title }}">
+                        {% else %}
+                            <img src="{{ asset('uploads/images/wish/default.jpg') }}" alt="Default Image">
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-secondary" href="{{ path('app_wish_edit', {id: wish.id}) }}" style="font-size: small;">Wish Edit</a>
+            <form method="post" action="{{ path('app_wish_delete', {id: wish.id}) }}" onsubmit="return confirm('Are you sure you want to delete this wish?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ wish.id) }}">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

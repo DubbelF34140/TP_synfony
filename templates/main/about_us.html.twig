@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-bottom: 50px;">
+        <h1 class="my-4">About Us</h1>
+        <div class="row">
+            {% for person in people %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ person.picture }}" class="card-img-top" alt="{{ person.firstname }} {{ person.lastname }}">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ person.firstname }} {{ person.lastname }}
+                                {% if person.firstname == 'Fabien' %}
+                                    ❤
+                                {% endif %}
+                            </h5>
+                            <p class="card-text">
+                                <strong>Creator of:</strong> {{ person.creatorOf }}<br>
+                                <strong>Date of Birth:</strong> {{ person.dateOfBirth | date('d-m-Y') }}<br>
+                                {{ person.description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
