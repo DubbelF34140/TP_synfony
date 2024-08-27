@@ -23,6 +23,17 @@
                                 }
                             }) }}
                         </div>
+
+                        <div class="form-group">
+                            {{ form_label(registrationForm.pseudo, 'Pseudo') }}
+                            {{ form_widget(registrationForm.pseudo, {
+                                attr: {
+                                    class: 'form-control',
+                                    placeholder: 'Enter your pseudo'
+                                }
+                            }) }}
+                        </div>
+
                         <div class="form-group">
                             {{ form_label(registrationForm.plainPassword, 'Password') }}
                             {{ form_widget(registrationForm.plainPassword, {

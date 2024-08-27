@@ -29,9 +29,10 @@
 
                         <div class="form-group mb-3">
                             {{ form_label(wishForm.author, 'Auteur', {'label_attr': {'class': 'form-label'}}) }}
-                            {{ form_widget(wishForm.author, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_widget(wishForm.author, {'attr': {'class': 'form-control', 'value': app.user ? app.user.pseudo : ''}}) }}
                             {{ form_errors(wishForm.author, {'attr': {'class': 'text-danger'}}) }}
                         </div>
+
 
                         {{ form_row(wishForm.image) }}
 

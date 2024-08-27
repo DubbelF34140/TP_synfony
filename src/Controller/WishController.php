@@ -15,7 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
-#[IsGranted("ROLE_USER")]
 #[Route('/wish', name: 'app_wish')]
 class WishController extends AbstractController
 {
@@ -43,6 +42,7 @@ class WishController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/create', name: '_create')]
     public function create(
         EntityManagerInterface $entityManager,
@@ -87,6 +87,7 @@ class WishController extends AbstractController
     }
 
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/edit/{id}', name: '_edit')]
     public function edit(
         int $id,
@@ -142,6 +143,7 @@ class WishController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/delete/{id}', name: '_delete', methods: ['POST'])]
     public function delete(
         int $id,

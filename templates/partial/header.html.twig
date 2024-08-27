@@ -17,15 +17,15 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_wish_list') }}">Wish List</a>
+                </li>
                 {% if is_granted('ROLE_USER') %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_about_us') }}">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_wish_create') }}">New Wish</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_wish_list') }}">Wish List</a>
                     </li>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
@@ -43,6 +43,7 @@
                 <a class="btn btn-sm btn-secondary ms-2" href="{{ path('app_logout') }}">Logout</a>
             {% else %}
                 <a class="btn btn-sm btn-secondary" href="{{ path('app_login') }}">Login</a>
+                <a class="btn btn-sm btn-secondary" href="{{ path('app_register') }}">Register</a>
             {% endif %}
         </div>
     </div>
