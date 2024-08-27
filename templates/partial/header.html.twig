@@ -39,7 +39,7 @@
         <!-- Connexion/Utilisateur -->
         <div class="d-flex align-items-center ms-auto">
             {% if app.user %}
-                <span class="me-2">{{ app.user.email }}</span>
+                <span class="me-2">{{ app.user.pseudo }}</span>
                 <a class="btn btn-sm btn-secondary ms-2" href="{{ path('app_logout') }}">Logout</a>
             {% else %}
                 <a class="btn btn-sm btn-secondary" href="{{ path('app_login') }}">Login</a>
