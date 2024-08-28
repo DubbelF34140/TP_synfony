@@ -19,18 +19,12 @@ class WishFormType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('author')
             ->add('image', FileType::class, [
                 'label' => 'Image (png/jpeg file)',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                        ],
                         'mimeTypesMessage' => 'Please upload a valid image (JPG/PNG)',
                     ])
                 ],

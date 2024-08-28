@@ -74,6 +74,7 @@ class WishController extends AbstractController
 
             $wish->setDateCreated(new \DateTime());
             $wish->setIsPublished(true);
+            $wish->setAuthor($this->getUser()->getPseudo());
             $entityManager->persist($wish);
             $entityManager->flush();
 
