@@ -42,9 +42,11 @@ class WishController extends AbstractController
         ]);
     }
 
-    #[IsGranted("ROLE_USER")]
-    #[Route('/create', name: '_create')]
-    public function create(
+    /**
+     * @Route('/create', name: '_create')
+     * @IsGranted("ROLE_USER)
+     */
+    public function creer(
         EntityManagerInterface $entityManager,
         Request $request,
         SluggerInterface $slugger,
@@ -91,14 +93,14 @@ class WishController extends AbstractController
     #[IsGranted("ROLE_USER")]
     #[Route('/edit/{id}', name: '_edit')]
     public function edit(
-        int $id,
         EntityManagerInterface $entityManager,
         WishRepository $wishRepository,
         Request $request,
         SluggerInterface $slugger,
         #[Autowire('%kernel.project_dir%/public/uploads/images/wish')] string $brochuresDirectory
     ): Response {
-        $wish = $wishRepository->find($id);
+
+        $wish = $wishRepository->find($request->get("id"));
 
         if (!$wish) {
             throw $this->createNotFoundException('Wish not found');

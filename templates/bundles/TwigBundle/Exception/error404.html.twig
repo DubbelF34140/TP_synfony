@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page not found{% endblock %}
+
+{% block body %}
+    <h1>Erreur 404 : Page not found</h1>
+    <p>The page you are looking for does not exist.</p>
+    <p>You can try to go back to the <a href="{{ path('app_main') }}">homepage</a> or search for what you're looking for.</p>
+{% endblock %}

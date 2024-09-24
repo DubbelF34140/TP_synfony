@@ -3,7 +3,10 @@
 {% block title %}{{
 parent() ~ ' - Home'
 }}{% endblock %}
+{% set var ='<strong>titre en gras</strong>' %}
+
 
 {% block body %}
     <h1>Ceci est la page d'accueil !</h1>
+    {{ var | raw }}
 {% endblock %}

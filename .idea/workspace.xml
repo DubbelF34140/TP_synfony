@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cec307b-0f4f-447e-bd19-ee9789aa870d" name="Changes" comment="Add security">
-      <change afterPath="$PROJECT_DIR$/src/Service/Censurator.php" afterDir="false" />
+    <list default="true" id="5cec307b-0f4f-447e-bd19-ee9789aa870d" name="Changes" comment="Add Censurator.php">
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/WishController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WishController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/WishFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/WishFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/wish/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wish/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/wish/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wish/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partial/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partial/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wish/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wish/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +189,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ylanwoelffle/PhpstormProjects/tp_app/public&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ylanwoelffle/PhpstormProjects/tp_app/templates/bundles/TwigBundle/Exception&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -200,6 +201,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates/partial" />
       <recent name="$PROJECT_DIR$/templates" />
@@ -233,7 +235,9 @@
       <option name="presentableId" value="Default" />
       <updated>1724062817170</updated>
       <workItem from="1724062819492" duration="51872000" />
-      <workItem from="1724419617089" duration="30865000" />
+      <workItem from="1724419617089" duration="39923000" />
+      <workItem from="1725000417499" duration="1173000" />
+      <workItem from="1725018286509" duration="3239000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -259,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724760983670</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Censurator.php">
+      <option name="closed" value="true" />
+      <created>1724828110627</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724828110627</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +293,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Init" />
     <MESSAGE value="Add security" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add security" />
+    <MESSAGE value="Add Censurator.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Censurator.php" />
   </component>
 </project>
